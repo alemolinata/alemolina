@@ -1,0 +1,223 @@
+@media only screen and (max-width:800px){
+	.skill__container{
+	    padding-right: 10px;
+	}
+	.skill{
+	    padding-left: 10px;
+	}
+}
+@media only screen and (max-width:640px){
+	header{
+	    padding: 30px 0 20px 0;
+	}
+	.logo--main{
+	    height: 80px;
+	}
+	.skill__container{
+		width: auto;
+	    margin-left: -20px;
+	    padding: 0;
+	}
+	.skill{
+	    display: inline-block;
+	    width: 33.3333%;
+	    max-height: 100px;
+	    padding-left: 20px;
+	    padding-bottom: 20px;
+	}
+	.entry{
+		padding: 20px;
+		height: auto;
+		width: 90%;
+		img{
+			display: none;
+		}
+	}
+	.entry__content{
+		padding-left: 0;
+	}
+	h1{
+		font-size: 1.8em;
+		&:before{
+			width: 24px;
+			height: 24px;
+			background-size: contain;
+		}
+	}
+	h2{
+		padding: 0;
+		font-size: 1.6em;
+	}
+	.project__name{
+	    padding-left:20px;
+	    margin-top: 20px;
+	    &:hover span{
+	    	display: none;
+	    }
+	}
+	.work__grid,
+	.grid--img{
+	    margin-left: -20px;
+	}
+	.grid--img{
+		margin-top: 20px;
+		margin-bottom: 20px;
+		img{
+	    	padding-left: 20px;
+	    	width: 50%;
+	    	margin: 20px 0 0 0;
+	    }
+	}
+	.grid--img-3{
+		img:last-child{
+			display: none;
+		}
+	}
+	.grid--img-2{
+		img{
+			width: 100%;
+		}
+	}
+
+	.projects__title,
+	.more__title{
+		padding-top: 20px;
+	}
+	.project__section,
+	.more__section{
+	    padding: 10px 0;
+	}
+	.section--about{
+	    padding: 40px 0;
+	}
+	p{
+		padding: 0;
+	}
+	ul{
+		margin: 0;
+	}
+	.more__grid{
+	    margin-left: -20px;
+	    .more__name{
+	        padding-left: 20px;
+	        margin-top: 20px;
+	    }
+	}
+	.menu-float{
+	    top: 5px;
+	    right: 5px;
+	    .menu__name{
+	        padding: 10px;
+	        span{
+	            width: 85px;
+	            height: 25px;
+	            &:before{
+	                width: 50px;
+	                height: 25px;
+	            }
+	        }
+	    }
+	    .menu__options span{
+	        height: 45px;
+	        padding: 10px 15px;
+	        line-height: 25px;
+	    }
+	}
+	.section--work__title,
+	.section--more__title{
+	    padding-top: 40px;
+	}
+	.section--work,
+	.section--more{
+		padding-bottom: 60px;
+	}
+	.back{
+		padding-bottom: 40px;
+	}
+	.more__content,
+	.project__content{
+		ul, ol{
+			margin: 0;
+			margin-left: 24px;
+		}
+	}
+	.ul--skills{
+		padding: 0;
+	    li{
+	        font-size: 1em;
+	        background-size: auto 28px;
+	        height: 28px;
+	        max-width: 196px;
+	        line-height: 28px;
+	        padding-left: 34px;
+	        padding-right: 8px;
+	        margin: 0 6px 6px 0;
+	    }
+	}
+	.section--intro,
+	.section--contact{
+		background-image: url('../images/bg.jpg');
+		background-size: 30px;
+		background-repeat: repeat;
+	}
+
+	.section--about{
+	    .index__list{
+	    	text-align: center;
+	        margin: 0;
+	        padding: 0;
+	        li{
+	        	width: 100%;
+	        	margin: 0 auto;
+	        	padding: 10px 0;
+		    }
+	    }
+	    .li--portfolio,
+	    .li--cv,
+	    .li--contact{
+	        position: absolute;
+	        width: 60px;
+	        height: 60px;
+	        margin-bottom: 12px;
+	    }
+	    .li--content{
+	    	display: inline-block;
+	    	width: 100%;
+	    	padding-left: 66px;
+	    	text-align: left;
+	    }
+	}
+
+	.section--contact{
+	    span{
+	        padding: 20px 0;
+	        display: inline-block;
+	    }
+	    a{
+	        width: 25%;
+	        max-height: 120px;
+	        padding: 20px 10px;
+	        display: inline-block;
+	        text-align: center;
+	        img{
+	            max-height: 80px;
+	        }
+	    }
+	}
+}
+
+@media only screen and (max-width:500px){
+	.project__name{
+		width: 100%;
+	}
+	.more__grid{
+	    .more__name{
+	        width: 50%;
+	    }
+	}
+
+}
+
+
+
+

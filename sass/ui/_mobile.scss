@@ -1,0 +1,24 @@
+/*------------------------------------*\
+    SASS FOR MOBILE VERSION
+\*------------------------------------*/
+/**
+* All the hover attributes are, instead, applied to the "pressed" class.
+* No cursor events.
+*
+*/
+@mixin hover-opacity($opacity-value){ //often the only hover attribute I add is a change in opacity
+    &:hover{
+        @include opacity($opacity-value);
+    }
+}
+@mixin opacity($opacity-value){ //like the vendor mixin, but for opacity :) to make it work even in IE8!
+    filter:     unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity-value * 100)})");
+    opacity:    $opacity-value;
+}
+
+// Make clickable elements slightly transparent when pressed.
+%hover5{
+	&.pressed{
+		@include opacity(0.5);
+	}
+}

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    STYLE.CSS
+\*------------------------------------*/
+/**
+ *
+ * This stylesheet imports "main.scss" which includes everything (inuit, myIcons, UI folder)
+ * Why do we need THIS one then, you ask?
+ * Well, it imports everything EXCEPT the mobile.scss and web.scss, because we want TWO separate stylesheets:
+ * 	- one for mobile versions
+ * 	- another one for desktop web versions
+ * 
+ */
+
+/**
+ * INUIT Setup
+ */
+@import "vars";
+@import "inuit.css/inuit";
+
+@import "ui/fonts";
+@import "ui/js-styles";
+@import "ui/myicons";
+@import "ui/general";
+@import "ui/main";
+@import "ui/forms";
+
+@import "ui/palm";
+@import "ui/web";

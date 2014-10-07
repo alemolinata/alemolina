@@ -1,0 +1,225 @@
+
+@charset "UTF-8";
+
+@import "myicons-variables";
+/*------------------------------------*\
+    FONTFACE
+\*------------------------------------*/
+/**
+ * Call the font. The order of the font-face call is important (The best rendered are called first)
+ */
+@font-face {
+  font-family: 'MyIcons';
+  src: url("../font/myicons.eot");
+  src: url("../font/myicons.eot?#iefix")  format("embedded-opentype"),
+       url("../font/myicons.svg#myicons") format("svg"),
+       url("../font/myicons.ttf")  format("truetype"),
+       url("../font/myicons.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+      font-family: ‘MyIcons’;
+      src: url("../font/myicons.svg#myicons") format("svg")
+  }
+}
+
+/*------------------------------------*\
+    CLASSES
+\*------------------------------------*/
+/**
+ * Call the font
+ */
+// Base Class Definition
+// -------------------------
+
+.#{$icon-css-prefix} {
+  display:     inline-block;
+  font-family: MyIcons;
+  font-style:  normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.#{$icon-css-prefix}-fw {
+  width: (18em / 14);
+  text-align: center;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  display: inline;
+  width:   auto;
+  height:  auto;
+  line-height:      normal;
+  vertical-align:   baseline;
+  background-image: none;
+  background-position: 0% 0%;
+  background-repeat:   repeat;
+  margin-top: 0;
+}
+
+/* Icons use the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+
+.#{$icon-css-prefix}-more:before           {content: $icon-more;}
+.#{$icon-css-prefix}-remove:before         {content: $icon-remove; }
+.#{$icon-css-prefix}-asterisk:before       {content: $icon-asterisk; }
+.#{$icon-css-prefix}-checkmark:before      {content: $icon-checkmark; }
+.#{$icon-css-prefix}-up:before             {content: $icon-up; }
+.#{$icon-css-prefix}-right:before          {content: $icon-right; }
+.#{$icon-css-prefix}-down:before           {content: $icon-down; }
+.#{$icon-css-prefix}-left:before           {content: $icon-left; }
+.#{$icon-css-prefix}-arrow-up:before       {content: $icon-arrow-up; }
+.#{$icon-css-prefix}-arrow-right:before    {content: $icon-arrow-right; }
+.#{$icon-css-prefix}-arrow-down:before     {content: $icon-arrow-down; }
+.#{$icon-css-prefix}-arrow-left:before     {content: $icon-arrow-left; }
+.#{$icon-css-prefix}-up-circle:before      {content: $icon-up-circle; }
+.#{$icon-css-prefix}-up-circle-o:before    {content: $icon-up-circle-o; }
+.#{$icon-css-prefix}-right-circle:before   {content: $icon-right-circle; }
+.#{$icon-css-prefix}-right-circle-o:before {content: $icon-right-circle-o; }
+.#{$icon-css-prefix}-down-circle:before    {content: $icon-down-circle; }
+.#{$icon-css-prefix}-down-circle-o:before  {content: $icon-down-circle-o; }
+.#{$icon-css-prefix}-left-circle:before    {content: $icon-left-circle; }
+.#{$icon-css-prefix}-left-circle-o:before  {content: $icon-left-circle-o; }
+.#{$icon-css-prefix}-circle:before         {content: $icon-circle;    }
+.#{$icon-css-prefix}-circle-o:before       {content: $icon-circle-o;  }
+.#{$icon-css-prefix}-square:before         {content: $icon-square;    }
+.#{$icon-css-prefix}-square-o:before       {content: $icon-square-o;  }
+.#{$icon-css-prefix}-checkbox:before       {content: $icon-checkbox;  }
+.#{$icon-css-prefix}-checkbox-o:before     {content: $icon-checkbox-o;}
+.#{$icon-css-prefix}-close:before          {content: $icon-close;     }
+.#{$icon-css-prefix}-close-o:before        {content: $icon-close-o;   }
+.#{$icon-css-prefix}-info:before           {content: $icon-info;      }
+.#{$icon-css-prefix}-info-o:before         {content: $icon-info-o;    }
+.#{$icon-css-prefix}-plus:before           {content: $icon-plus;      }
+.#{$icon-css-prefix}-plus-o:before         {content: $icon-plus-o;    }
+.#{$icon-css-prefix}-help:before           {content: $icon-help;      }
+.#{$icon-css-prefix}-help-o:before         {content: $icon-help-o;    }
+.#{$icon-css-prefix}-download:before       {content: $icon-download;  }
+.#{$icon-css-prefix}-download-o:before     {content: $icon-download-o;}
+.#{$icon-css-prefix}-share:before          {content: $icon-share;     }
+.#{$icon-css-prefix}-share-o:before        {content: $icon-share-o;   }
+.#{$icon-css-prefix}-cog:before            {content: $icon-cog;       }
+.#{$icon-css-prefix}-cog-o:before          {content: $icon-cog-o;     }
+.#{$icon-css-prefix}-menu:before           {content: $icon-menu;      }
+.#{$icon-css-prefix}-menu-o:before         {content: $icon-menu-o;    }
+.#{$icon-css-prefix}-file:before           {content: $icon-file;      }
+.#{$icon-css-prefix}-file-o:before         {content: $icon-file-o;    }
+.#{$icon-css-prefix}-home:before           {content: $icon-home;      }
+.#{$icon-css-prefix}-home-o:before         {content: $icon-home-o;    }
+.#{$icon-css-prefix}-search:before         {content: $icon-search;    }
+.#{$icon-css-prefix}-search-o:before       {content: $icon-search-o;  }
+.#{$icon-css-prefix}-world:before          {content: $icon-world;     }
+.#{$icon-css-prefix}-world-o:before        {content: $icon-world-o;   }
+.#{$icon-css-prefix}-refresh:before        {content: $icon-refresh;   }
+.#{$icon-css-prefix}-refresh-o:before      {content: $icon-refresh-o; }
+.#{$icon-css-prefix}-star:before           {content: $icon-star;      }
+.#{$icon-css-prefix}-star-o:before         {content: $icon-star-o;    }
+.#{$icon-css-prefix}-message:before        {content: $icon-message;   }
+.#{$icon-css-prefix}-message-o:before      {content: $icon-message-o; }
+.#{$icon-css-prefix}-note:before           {content: $icon-note;      }
+.#{$icon-css-prefix}-note-o:before         {content: $icon-note-o;    }
+.#{$icon-css-prefix}-pencil:before         {content: $icon-pencil;    }
+.#{$icon-css-prefix}-pencil-o:before       {content: $icon-pencil-o;  }
+.#{$icon-css-prefix}-love:before           {content: $icon-love;      }
+.#{$icon-css-prefix}-love-o:before         {content: $icon-love-o;    }
+.#{$icon-css-prefix}-plane:before          {content: $icon-plane;     }
+.#{$icon-css-prefix}-plane-o:before        {content: $icon-plane-o;   }
+.#{$icon-css-prefix}-book:before           {content: $icon-book;      }
+.#{$icon-css-prefix}-book-o:before         {content: $icon-book-o;    }
+.#{$icon-css-prefix}-bookmark:before       {content: $icon-bookmark;  }
+.#{$icon-css-prefix}-bookmark-o:before     {content: $icon-bookmark-o;}
+.#{$icon-css-prefix}-alarm:before          {content: $icon-alarm;     }
+.#{$icon-css-prefix}-alarm-o:before        {content: $icon-alarm-o;   }
+.#{$icon-css-prefix}-apple:before          {content: $icon-apple;     }
+.#{$icon-css-prefix}-apple-o:before        {content: $icon-apple-o;   }
+.#{$icon-css-prefix}-android:before        {content: $icon-android;   }
+.#{$icon-css-prefix}-android-o:before      {content: $icon-android-o; }
+.#{$icon-css-prefix}-money:before          {content: $icon-money; }
+.#{$icon-css-prefix}-number:before         {content: $icon-number; }
+.#{$icon-css-prefix}-sisu:before           {content: $icon-sisu; }
+.#{$icon-css-prefix}-sisu-o:before         {content: $icon-sisu-o; }
+.#{$icon-css-prefix}-sisu-name:before      {content: $icon-sisu-name; }
+.#{$icon-css-prefix}-tsys:before           {content: $icon-tsys; }
+.#{$icon-css-prefix}-abc:before            {content: $icon-abc; }
+.#{$icon-css-prefix}-triangle:before       {content: $icon-triangle; }
+.#{$icon-css-prefix}-triangle-o:before     {content: $icon-triangle-o; }
+.#{$icon-css-prefix}-logout:before         {content: $icon-logout; }
+.#{$icon-css-prefix}-logout-o:before       {content: $icon-logout-o; }
+.#{$icon-css-prefix}-menu-lines:before     {content: $icon-menu-lines; }
+.#{$icon-css-prefix}-at:before             {content: $icon-at; }
+.#{$icon-css-prefix}-money-circle:before   {content: $icon-money-circle; }
+.#{$icon-css-prefix}-money-circle-o:before {content: $icon-money-circle-o; }
+.#{$icon-css-prefix}-number-circle:before  {content: $icon-number-circle; }
+.#{$icon-css-prefix}-number-circle-o:before{content: $icon-number-circle-o; }
+.#{$icon-css-prefix}-pdf:before            {content: $icon-pdf; }
+.#{$icon-css-prefix}-pdf-o:before          {content: $icon-pdf-o; }
+.#{$icon-css-prefix}-lock:before           {content: $icon-lock; }
+.#{$icon-css-prefix}-lock-o:before         {content: $icon-lock-o; }
+.#{$icon-css-prefix}-wrench:before         {content: $icon-wrench; }
+.#{$icon-css-prefix}-wrench-o:before       {content: $icon-wrench-o; }
+.#{$icon-css-prefix}-man:before            {content: $icon-man; }
+.#{$icon-css-prefix}-man-o:before          {content: $icon-man-o; }
+.#{$icon-css-prefix}-woman:before          {content: $icon-woman; }
+.#{$icon-css-prefix}-woman-o:before        {content: $icon-woman-o; }
+.#{$icon-css-prefix}-cloud:before          {content: $icon-cloud; }
+.#{$icon-css-prefix}-cloud-o:before        {content: $icon-cloud-o; }
+.#{$icon-css-prefix}-bars:before           {content: $icon-bars; }
+.#{$icon-css-prefix}-bars-o:before         {content: $icon-bars-o; }
+.#{$icon-css-prefix}-pie:before            {content: $icon-pie; }
+.#{$icon-css-prefix}-pie-o:before          {content: $icon-pie-o; }
+.#{$icon-css-prefix}-database:before       {content: $icon-database; }
+.#{$icon-css-prefix}-database-o:before     {content: $icon-database-o; }
+.#{$icon-css-prefix}-mobile:before         {content: $icon-mobile; }
+.#{$icon-css-prefix}-mobile-o:before       {content: $icon-mobile-o; }
+.#{$icon-css-prefix}-power:before          {content: $icon-power; }
+.#{$icon-css-prefix}-power-o:before        {content: $icon-power-o; }
+.#{$icon-css-prefix}-screen:before         {content: $icon-screen; }
+.#{$icon-css-prefix}-screen-o:before       {content: $icon-screen-o; }
+.#{$icon-css-prefix}-upload:before         {content: $icon-upload; }
+.#{$icon-css-prefix}-upload-o:before       {content: $icon-upload-o; }
+.#{$icon-css-prefix}-phone:before          {content: $icon-phone; }
+.#{$icon-css-prefix}-phone-o:before        {content: $icon-phone-o; }
+.#{$icon-css-prefix}-portfolio:before      {content: $icon-portfolio; }
+.#{$icon-css-prefix}-portfolio-o:before    {content: $icon-portfolio-o; }
+.#{$icon-css-prefix}-toolbox:before        {content: $icon-toolbox; }
+.#{$icon-css-prefix}-toolbox-o:before      {content: $icon-toolbox-o; }
+
+/*------------------------------------*\
+    ICON STYLING
+\*------------------------------------*/
+/**
+ * Style icons
+ */
+
+// Bordered & Pulled
+// -------------------------
+
+.#{$icon-css-prefix}-border {
+  padding: .2em .25em .15em;
+  border:  solid .08em $icon-border-color;
+  border-radius: .1em;
+}
+
+.pull-right { float: right; }
+.pull-left  { float: left; }
+
+.#{$icon-css-prefix} {
+  &.pull-left  { margin-right: .3em; }
+  &.pull-right { margin-left:  .3em; }
+}
+
+/* makes the font 33% larger relative to the icon container */
+.#{$icon-css-prefix}-lg {
+  font-size:   (4em / 3);
+  line-height: (3em / 4);
+  vertical-align: -15%;
+}
+.#{$icon-css-prefix}-2x { font-size: 2em; }
+.#{$icon-css-prefix}-3x { font-size: 3em; }
+.#{$icon-css-prefix}-4x { font-size: 4em; }
+.#{$icon-css-prefix}-5x { font-size: 5em; }

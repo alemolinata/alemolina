@@ -1,0 +1,174 @@
+/*------------------------------------*\
+    MY MIXINS & SILENT CLASSES
+\*------------------------------------*/
+/**
+* Attributes I will be using throughout the whole document.
+*/
+
+%title{ //title silent class, won't appear unless extended. Yours to define. 
+}
+
+%inherit-font{    //to avoid changes in font, mostly for form items
+    font-family: inherit;
+    font-size:   inherit;
+    color: 		 inherit;
+    font-weight: 300;
+}
+
+%erase-form-styling{           //to start styling from scratch on forms. User agent stylesheets are HELL.
+    @extend %inherit-font;
+    @include vendor(box-sizing, border-box);
+    @include vendor(border-radius, 0);
+    border: none;
+    border-collapse: collapse;
+}
+
+@mixin z-index ($z-index-value){ //z-index is not supported in some devices unless you add the "transform" bit
+    z-index: $z-index-value;
+    -webkit-transform: translate3d(0,0,0);
+}
+%scroll-y{
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+}
+%scroll-x{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: hidden;
+}
+%scroll-xy{
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@mixin opacity($opacity-value){ //like the vendor mixin, but for opacity :) to make it work even in IE8!
+    filter:     unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity-value * 100)})");
+    opacity:    $opacity-value;
+    -o-opacity: $opacity-value;
+    -ms-opacity: $opacity-value;
+    -moz-opacity: $opacity-value;
+    -webkit-opacity: $opacity-value;
+}
+
+@mixin animation($animation-time){
+    -webkit-transition: all $animation-time ease;
+    -moz-transition: all $animation-time ease;
+    -o-transition: all $animation-time ease;
+    transition: all $animation-time ease;
+}
+@mixin animation-attr($attribute, $animation-time){
+    -webkit-transition: $attribute $animation-time ease;
+    -moz-transition: $attribute $animation-time ease;
+    -ms-transition: $attribute $animation-time ease;
+    -o-transition: $attribute $animation-time ease;
+    transition: $attribute $animation-time ease;
+}
+@mixin animation-vendor($attribute, $animation-time){
+    -webkit-transition: -webkit-#{$attribute} $animation-time ease;
+    -moz-transition: -moz-#{$attribute} $animation-time ease;
+    -ms-transition: -ms-#{$attribute} $animation-time ease;
+    -o-transition: -o-#{$attribute} $animation-time ease;
+    transition: $attribute $animation-time ease;
+}
+
+
+/*------------------------------------*\
+    GENERAL SELECTORS
+\*------------------------------------*/
+
+* {
+    @include vendor(box-sizing, border-box);   //When you set a size for a div, it counts the padding and border as part of that size.
+}
+
+html{
+    height: 100%;
+    width:      100%;
+    -webkit-font-smoothing:  antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+}
+
+::selection {
+    background: $color--highlight;
+    color: $color--background;
+}
+::-moz-selection {
+    background: $color--highlight;
+    color: $color--background;
+}
+
+body{
+    height:     100%;
+    width:      100%;
+    //background: url('../images/background.jpg') no-repeat center center fixed;
+    font-family: Avenir, Nunito, Helvetica, Arial, sans-serif;
+    background-size: cover;
+    color: $color--foreground;
+
+}
+
+a,
+.link,
+html a.link{  //reset link styling (we don't want it underlined or its color changed unless WE tell it to)
+    text-decoration: none;
+    color: $color--highlight;
+}
+
+header{
+    background-color: $color--background;
+    padding: 50px 0 40px 0;
+    text-align: center;
+    @extend %js-animation;
+}
+.logo--main{
+    display: inline-block;
+    height: 100px;
+    @extend %js-animation;
+}
+.nav--main{
+    background-color: $color--highlight;
+    color: $color--background;
+    span{
+        width: 25%;
+        display: inline-block;
+        text-align: center;
+        padding: 6px 0;
+        font-size: 1.2em;
+        cursor: pointer;
+    }
+}
+
+h1{
+    margin: 0;
+    padding-bottom: 20px;
+    font-weight: normal;
+    &:before{
+        content: "";
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        background-image: url('../images/triangle.svg');
+        background-size: contain;
+        margin-right: 8px;
+    }
+}
+h2{
+    padding: 0 42px;
+    margin: 0;
+    font-weight: normal;
+}
+h3{
+    padding: 0 42px;
+    margin: 0;
+    font-weight: normal;
+    color: $color--highlight;
+    font-size: 1.3rem;
+}
+.content{
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+

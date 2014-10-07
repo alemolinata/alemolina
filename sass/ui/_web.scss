@@ -1,0 +1,82 @@
+/*------------------------------------*\
+    SASS FOR WEB VERSION (NO MOBILES)
+\*------------------------------------*/
+/**
+* All the hover and cursor attributes, that are not needed on mobile version.
+*/
+@mixin hover-opacity($opacity-value){ //often the only hover attribute I add is a change in opacity
+    &:hover{
+        @include opacity($opacity-value);
+    }
+}
+@mixin opacity($opacity-value){ //like the vendor mixin, but for opacity :) to make it work even in IE8!
+    filter:     unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity-value * 100)})");
+    opacity:    $opacity-value;
+}
+
+%hover5{
+	cursor: pointer;
+	@include hover-opacity(0.5);
+}
+
+.web{
+    .more__name,
+    .project__name{
+        cursor: pointer;
+        span{
+            text-align: right;
+            font-size:1.2em;
+            padding: 10px 15px;
+            color: $color--background;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+        }
+        &:after{
+            @extend %js-animation;
+            content:"";
+            background-image: url('../images/triangle.svg');
+            opacity: 0.9;
+            background-size: cover;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: -100%;
+            left: 0;
+            z-index: 1;
+        }
+        &:hover:after,
+        &.active:after{
+            right: -1px;
+        }
+        &:hover span{
+            @include opacity(1);
+        }
+    }
+
+    .project__name:after{
+        background-image: url('../images/triangle-gray.svg');
+        opacity: 0.4;
+    }
+    .project__name.project--abc span{
+        color: darken($color-blue, 20);
+    }
+    .project__name.project--conp span{
+        color: darken($color-orange, 20);
+    }
+    .project__name.project--tsys span{
+        color: darken($color-red, 20);
+    }
+    .project__name.project--sisu span{
+        color: darken($color-green, 20);
+    }
+    .project__name.project--juliuce span{
+        color: darken($color-yellow, 20);
+    }
+    .project__name.project--production span{
+        color: darken($color-purple, 20);
+    }
+}

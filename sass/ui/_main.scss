@@ -1,0 +1,381 @@
+/*------------------------------------*\
+    MAIN.SCSS
+\*------------------------------------*/
+/**
+ * Main style and layout of the website.
+ */
+
+.entry{
+    transition: all 0.5s ease;
+    background-color: rgba(255,255,255,0.9);
+    width: 80%;
+    height: 240px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-right: 8px solid $color--highlight;
+    img{
+        position: absolute;
+        width: 200px;
+        transition: all 0.5s ease;
+    }
+    span{
+
+    }
+    ol{
+        margin: 0;
+        padding: 0;
+        padding-left: 40px;
+        padding-top: 10px;
+        font-size: 1.2em;
+    }
+    li{
+        cursor: pointer;
+    }
+}
+.entry__content{
+    display: block;
+    width: 100%;
+    vertical-align: top;
+    padding-left: 220px;
+    h2{
+        padding-left: 0;
+        margin-bottom: -10px;
+    }
+}
+.section--intro{
+    background-color: $color--highlight;
+    background-image: url('../images/background.jpg');
+    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-transition: background .25s ease;
+    -moz-transition: background .25s ease;
+    -o-transition: background .25s ease;
+    transition: background .25s ease;
+
+    padding: 40px 0;
+}
+.section--about{
+    background-color: $color--background;
+    padding: 80px 0 100px 0;
+    .index__list{
+        @extend %js-animation;
+        margin: 0;
+        padding: 20px 0;
+        //padding-left: 42px;
+        li{
+            cursor: pointer;
+            @extend %js-animation;
+            list-style: none;
+            text-align: center;
+            display: inline-block;
+            width: 33.33%;
+            vertical-align: top;
+            min-height: 82px;
+            padding: 10px;
+        }
+    }
+    .li--portfolio,
+    .li--cv,
+    .li--contact{
+        @extend %js-animation;
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+        background-size: contain;
+        display: block;
+        margin-bottom: 12px;
+    }
+    a{
+        color: inherit;
+    }
+    .li--portfolio{
+        background-image: url('../images/btn-portfolio.svg');
+    }
+    .li--cv{
+        background-image: url('../images/btn-cv-down.svg');
+    }
+    .li--contact{
+        background-image: url('../images/btn-contact.svg');
+    }
+}
+p{
+    padding: 0;
+    padding-left: 42px;
+}
+.p--short{
+    margin-bottom: 12px;
+}
+.skill__container{
+    width: 100%;
+    padding-right: 40px;
+}
+.skill{
+    display: inline-block;
+    width: 16.666666%;
+    padding-left: 40px;
+    transition: all 0.5s ease;
+}
+.ul--skills{
+    margin: 0;
+    padding: 0 42px;
+    li{
+        list-style: none;
+        font-size: 1.2em;
+        background-image: url('../images/skill-4-4.svg');
+        background-size: auto 36px;
+        background-repeat: no-repeat;
+        height: 36px;
+        max-width: 252px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        line-height: 36px;
+        padding-left: 44px;
+        padding-right: 12px;
+        margin: 0 12px 12px 0;
+        display: inline-block;
+    }
+    .skill-1-4{
+        background-image: url('../images/skill-1-4.svg');
+    }
+    .skill-2-4{
+        background-image: url('../images/skill-2-4.svg');
+    }
+    .skill-3-4{
+        background-image: url('../images/skill-3-4.svg');
+    }
+}
+
+.section--work,
+.section--more{
+    padding-bottom: 100px;
+    background-color: $color--background-2;
+}
+
+.section--work__title,
+.section--more__title{
+    padding-top: 60px;
+    h1{
+        width: 90%;
+        max-width: 1000px;
+        margin: 0 auto;
+        @extend %js-animation;
+    }
+}
+.section--work__title{
+    background-color: $color--background-2;
+}
+
+.section--more{
+    background-color: $color--background;
+}
+
+.more__grid{
+    margin-left: -40px;
+    .more__name{
+        display: inline-block;
+        width: 33.333%;
+        padding-left: 40px;
+    }
+}
+.more__name,
+.project__name{
+    @extend %js-animation;
+    display: inline-block;
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    padding-left: 40px;
+    margin-top: 40px;
+    img{
+        display: block;
+    }
+    span{
+        display: block;
+        @include opacity(0);
+        @include animation(0.4s);
+    }
+}
+
+.work__grid{
+    margin-left: -40px;
+}
+
+
+.project__content,
+.more__content{
+    display: none;
+    padding: 60px 0;
+    background-color: $color--background-3;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    img{
+        max-height: 100%;
+        max-height: 450px;
+        margin: 40px auto;
+        margin-bottom: 20px;
+        display: block;
+    }
+    ul, ol{
+        margin-left: 66px;
+        margin-bottom: 12px;
+    }
+}
+.more__content{
+    background-color: $color--background-2;
+    p{
+        margin: 0;
+    }
+    
+}
+
+.grid--img{
+    margin-left: -40px;
+    img{
+        display: inline-block;
+        padding-left: 40px;
+        width: 25%;
+        @extend %js-animation;
+    }
+}
+.grid--img-3{
+    @extend .grid--img;
+    img{
+        width: 33.3333%;
+    }
+}
+.grid--img-2{
+    @extend .grid--img;
+    img{
+        width: 50%;
+        margin: 0;
+        margin-top: 40px;
+    }
+}
+
+
+.back{
+    cursor: pointer;
+    color: $color--highlight;
+    padding-bottom: 60px;
+    &:before{
+        content: "";
+        background-image: url('../images/btn-back.svg');
+        background-size: contain;
+        width: 34px;
+        display: inline-block;
+        height: 34px;
+        position: relative;
+        top: 2px;
+    }
+}
+
+.menu-float{
+    position: fixed;
+    background-color: $color--background-3;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    -moz-box-shadow: -2px 2px 4px rgba(0,0,0,0.1);
+    -webkit-box-shadow: -2px 2px 4px rgba(0,0,0,0.1);
+    box-shadow: -2px 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+    display: none;
+    .menu__name{
+        padding: 10px;
+        display: block;
+        span{
+            display: block;
+            background-image: url('../images/btn-menu.svg');
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: contain;
+            width: 100px;
+            height: 30px;
+            &:before{
+                content:"";
+                display: inline-block;
+                background-image: url('../images/logoAM.svg');
+                background-size: contain;
+                width: 60px;
+                height: 30px;
+            }
+        }
+    }
+    .menu__options{
+        display: none;
+    }
+    .menu__options span{
+        font-size: 1.2em;
+        display: block;
+        margin: 0;
+        height: 50px;
+        padding: 10px 15px;
+        line-height: 30px;
+        text-align: right;
+        background-color: $color--background;
+        &:nth-child(2n){
+            background-color: $color--background-2;
+        }
+    }
+}
+[class*='btn--back']{
+    cursor: pointer;
+    text-align: right;
+    display: block;
+    font-size: 1.2em;
+    color: $color--highlight;
+    margin-top: 20px;
+    &:after{
+        content: "";
+        background-image: url('../images/btn-back.svg');
+        background-size: contain;
+        width: 20px;
+        display: inline-block;
+        height: 20px;
+        position: relative;
+        top: 2px;
+        margin-left: 6px;
+    }
+}
+
+.section--contact{
+    @extend .section--intro;
+    span{
+        padding: 20px 0;
+        display: inline-block;
+    }
+    a{
+        @include opacity(0.8);
+        width: 25%;
+        max-height: 200px;
+        padding: 40px 10px;
+        display: inline-block;
+        text-align: center;
+        img{
+            max-height: 120px;
+        }
+        &:hover{
+        	@include opacity(1);
+        }
+    }
+}
+
+footer{
+    background-color: $color--background-2;
+    text-align: center;
+    .content{
+        padding: 40px 0;
+    }
+}
+
+.disclaimer{
+    font-size: 0.9em;
+    color: lighten($color--foreground, 20);
+}
